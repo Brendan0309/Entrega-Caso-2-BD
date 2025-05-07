@@ -3,6 +3,7 @@
 Nombre de los integrantes
 
 -Brendan Ramírez Campos
+-Victor Andres Fung Chiong
 
 <hr>
 
@@ -27,7 +28,7 @@ Pequeña documentación: [MigracionTablasNuevas.pdf](./Migraciontablasnuevas.pdf
 
 <hr>
 
-# Consultas solicitadas
+## Consultas solicitadas
 
 
 <hr>
