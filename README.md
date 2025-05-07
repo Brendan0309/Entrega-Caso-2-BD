@@ -6,5 +6,5 @@ Nombre de los integrantes
 
 <hr>
 
-Diseño Actualizado de la base de datos: [DIagrama de la base final.pdf](https://github.com/user-attachments/files/20075198/DIagrama.de.la.base.final.pdf)
+Diseño Actualizado de la base de datos: [DIagrama de la base final.pdf]
 
