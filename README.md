@@ -2,8 +2,8 @@
 
 Nombre de los integrantes
 
--Brendan Ramírez Campos
--Victor Andres Fung Chiong
+- Brendan Ramírez Campos
+- Victor Andres Fung Chiong
 
 <hr>
 
