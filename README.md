@@ -25,27 +25,101 @@ Script para las consultas:
 
 <hr>
 
-[Uploadindocker run -d -p 3306:3306 --name dbserver -v C:\pruebasql:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=123456 mysql
+#Lista de entidades
 
-docker exec -it dbserver bash
+- Personas  
+- Usuarios  
+	- Contraseña  
+	- Habilitado  
+	- Compañías (Opcional)  
+- Información de contacto del usuario   
+	- Tipo (correo, teléfono, fax)  
+	- Última actualización  
+- Países  
+- States  
+	- Código Postal  
+	- Posición geográfica  
+- Ciudades  
+- Tipo de usuario de la conexión (usuario, compañía)  
+- Módulos  
+	- nombre  
+	- lenguaje  
+- Suscripciones  
+	- Precio
+  - Planes 
+	- Detalles
+  - Restricciones (Lugar y tiempo)
+	- Características  
+		- Nombre  
+		- Límites
+    - Promociones
+- Pagos registrados   
+- Fecha de expiración  
+- Monto  
+- Habilitado  
+- Moneda utilizada  
+- Tipo servicio  
+- Servicios de Pago  
+- Vinculación de redeem 
+	- QR
+	- Tiempo de expiración  
+- Métodos de Pago  
+- Pagos  
+	- Medio  
+	- Monto  
+	- Moneda Utilizada  
+	- Ritmo de Conversión  
+	- Fecha 
+- Compañías  
+- Roles (compañía, usuarios)  
+- Permisos  
+- Subscripciones  
+- Moneda  
+- Símbolos  
+- Alias  
+- Nombre  
+- Símbolo  
+- Conversiones  
+	- Fecha  
+	- Es la actual  
+	- Monto de cambio  
+- Historial (captura detalles del servicio entre otros datos además de la frecuencia y algún tipo de preferencia)  
+- Logs  
+	- Tipo  
+	- Referencias 1 y 2  
+	- Valores de la referencia  
+	- Fuente  
+	- Severidad  
+- Media (fotos
+	- Tipo  
+		- Nombre  
+		- Reproductor  
+	- Archivos  
+		- URL (para fotos y videos)  
+		- Borrado  
+		- Usuario perteneciente  
+		- Fecha de generación   
+- Idioma  
+- Traduccion  
+- Slangs  
+- Nombre    
+- Contratos con instituciones asociadas
+ - Beneficios
+  - Tipos
+ - Limites
+ - Renovaciones
+ - Direccion
+ - Obligaciones
 
-mysql -u root -p  // ingresando a la consola de mysql con el usuario root y me va a pedir el password 
+<hr>
+#Seguridad de la base
+Pequeña documentación: [Seguridad Bases.pdf](https://github.com/user-attachments/files/20075355/Seguridad.Bases.pdf)
 
-show databases; // mysql trabaja con lo que se llama un delimitador de instrucción que es por default el ; , pero se puede cambiar
+<hr>
+#Migracion SSIS (para la creacion de tablas nuevas, para migrar en tablas ya hechas se uso pandas)
+Pequeña documentación: [Migracion tablas nuevas.pdf](https://github.com/user-attachments/files/20075352/Migracion.tablas.nuevas.pdf)
 
-create database ejemplodeclase;
 
-use ejemplodeclase;
-
-show tables;
-
-C:\>docker exec -it dbserver bash
-bash-5.1# docker exec -it dbserver bash
-bash: docker: command not found
-bash-5.1# docker exec -it dbserver bash
-bash: docker: command not found
-bash-5.1# mysql -u root -p
-Enter password:
-ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2)g docker run -d -p 33063306 --name db.txt…]()
+   
 
 
