@@ -34,7 +34,13 @@ Pequeña documentación: [MigracionTablasNuevas.pdf](./Migraciontablasnuevas.pdf
 
 <hr>
 
-#Lista de entidades
+<details>
+
+<summary>
+	Lista de entidades
+</summary>
+
+<br>
 
 - Personas  
 - Usuarios  
@@ -120,7 +126,7 @@ Pequeña documentación: [MigracionTablasNuevas.pdf](./Migraciontablasnuevas.pdf
  - Direccion
  - Obligaciones
 
-
+</details>
 
 
 
