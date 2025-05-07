@@ -113,11 +113,11 @@ Script para las consultas:
 
 <hr>
 #Seguridad de la base
-Pequeña documentación: [Seguridad Bases.pdf](https://github.com/user-attachments/files/20075355/Seguridad.Bases.pdf)
+Pequeña documentación:
 
 <hr>
 #Migracion SSIS (para la creacion de tablas nuevas, para migrar en tablas ya hechas se uso pandas)
-Pequeña documentación: [Migracion tablas nuevas.pdf](https://github.com/user-attachments/files/20075352/Migracion.tablas.nuevas.pdf)
+Pequeña documentación: 
 
 
    
