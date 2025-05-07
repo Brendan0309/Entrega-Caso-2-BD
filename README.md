@@ -17,7 +17,7 @@ Script de Llenado de la BD:
 -Archivo .SQL: [Poblacion.sql](./Poblacion.sql)<br>
 
 Consultas T-SQL y Misceláneas:
--Archivo .SQL:
+-Archivo .SQL: [ConsultasMiscelaneas.sql](./ConsultasMiscelaneas.sql)<br>
 
 Factores de Seguridad:
 Pequeña documentación: [SeguridadBases.pdf](./SeguridadBases.pdf)<br>
