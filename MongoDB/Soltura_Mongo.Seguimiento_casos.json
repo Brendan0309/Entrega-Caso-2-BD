@@ -1,0 +1,28 @@
+[{
+  "_id": {
+    "$oid": "681a6f9bc799f147e13a278a"
+  },
+  "clienteId": "12345ABC",
+  "nombre": "María Fernández",
+  "fechaCreacion": {
+    "$date": "2025-05-05T14:45:00.000Z"
+  },
+  "agenteResponsable": "Carlos M.",
+  "categoria": "Beneficios no aplicados",
+  "descripcion": "El cliente no pudo redimir el café gratuito en la sucursal aliada.",
+  "estado": "En proceso",
+  "historial": [
+    {
+      "fecha": {
+        "$date": "2025-05-05T15:00:00.000Z"
+      },
+      "accion": "Se contactó al proveedor asociado para validar la transacción."
+    },
+    {
+      "fecha": {
+        "$date": "2025-05-06T09:30:00.000Z"
+      },
+      "accion": "Proveedor confirmó error en sistema. Se procederá con compensación."
+    }
+  ]
+}]

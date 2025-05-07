@@ -1,0 +1,235 @@
+[{
+  "_id": {
+    "$oid": "681a6e8ac799f147e13a2765"
+  },
+  "nombrePaquete": "FitPlus Access",
+  "descripcion": "Un plan de bienestar integral para quienes buscan libertad, acompañamiento profesional y resultados reales.",
+  "precioMensual": 499,
+  "beneficios": [
+    "Clases gratuitas cada mes",
+    "Acceso ilimitado a clases del gimnasio",
+    "Evaluación física gratuita mensual"
+  ],
+  "categoria": "Salud y Bienestar",
+  "marketing": {
+    "mensajePrincipal": "Entrena a tu ritmo, con los mejores beneficios.",
+    "publicoObjetivo": [
+      "Amantes del fitness",
+      "Personas activas",
+      "Profesionales con agenda dinámica"
+    ],
+    "canales": [
+      "Instagram",
+      "Alianzas con gimnasios",
+      "Publicidad digital"
+    ]
+  },
+  "media": [
+    {
+      "tipo": "imagen",
+      "url": "https://soltura.com/media/fitplus-access.jpg",
+      "descripcion": "Imagen promocional de FitPlus Access"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "681a6e8ac799f147e13a2766"
+  },
+  "nombrePaquete": "Café Comfort Plan",
+  "descripcion": "Perfecto para los amantes del café: más sabor, más ahorro y más momentos para disfrutar.",
+  "precioMensual": 199,
+  "beneficios": [
+    "1 bebida gratis al mes",
+    "Tamaño extra de café cada semana"
+  ],
+  "categoria": "Estilo de Vida",
+  "marketing": {
+    "mensajePrincipal": "Disfrutá tu café con más beneficios cada semana.",
+    "publicoObjetivo": [
+      "Amantes del café",
+      "Estudiantes",
+      "Profesionales urbanos"
+    ],
+    "canales": [
+      "Facebook",
+      "Cafeterías aliadas",
+      "Promociones por correo"
+    ]
+  },
+  "media": [
+    {
+      "tipo": "imagen",
+      "url": "https://soltura.com/media/cafe-comfort.jpg",
+      "descripcion": "Imagen promocional de Café Comfort Plan"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "681a6e8ac799f147e13a2767"
+  },
+  "nombrePaquete": "DriveSaver Plan",
+  "descripcion": "La opción inteligente para quienes conducen con frecuencia y valoran el ahorro, la comodidad y la tranquilidad.",
+  "precioMensual": 249,
+  "beneficios": [
+    "Descuento en combustible (compras mayores a ₡10.000)",
+    "Chequeo de aceite mensual",
+    "Acceso prioritario en estaciones afiliadas"
+  ],
+  "categoria": "Movilidad",
+  "marketing": {
+    "mensajePrincipal": "Movete más, gastá menos.",
+    "publicoObjetivo": [
+      "Conductores frecuentes",
+      "Repartidores",
+      "Padres con transporte diario"
+    ],
+    "canales": [
+      "Anuncios en gasolineras",
+      "Google Ads",
+      "Email marketing"
+    ]
+  },
+  "media": [
+    {
+      "tipo": "imagen",
+      "url": "https://soltura.com/media/drivesaver.jpg",
+      "descripcion": "Banner promocional de DriveSaver Plan"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "681a6e8ac799f147e13a2768"
+  },
+  "nombrePaquete": "Movie Treat Pack",
+  "descripcion": "Hecho para los cinéfilos que disfrutan de más películas, más snacks y beneficios exclusivos cada fin de semana.",
+  "precioMensual": 149,
+  "beneficios": [
+    "Entradas 2x1 todos los viernes",
+    "Palomitas gratis con tu entrada",
+    "Descuento en entradas los fines de semana"
+  ],
+  "categoria": "Entretenimiento",
+  "marketing": {
+    "mensajePrincipal": "Cine, snacks y descuentos que no te podés perder.",
+    "publicoObjetivo": [
+      "Jóvenes adultos",
+      "Parejas",
+      "Amantes del cine"
+    ],
+    "canales": [
+      "Instagram",
+      "Cines afiliados",
+      "TikTok"
+    ]
+  },
+  "media": [
+    {
+      "tipo": "imagen",
+      "url": "https://soltura.com/media/movie-treat.jpg",
+      "descripcion": "Promoción de Movie Treat Pack"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "681a6e8ac799f147e13a2769"
+  },
+  "nombrePaquete": "Wing Night Deal",
+  "descripcion": "Satisfacete con lo mejor del comfort food: más sabor, más beneficios y delivery gratis.",
+  "precioMensual": 179,
+  "beneficios": [
+    "Entrada gratis una vez al mes",
+    "Delivery gratuito todos los viernes"
+  ],
+  "categoria": "Gastronomía",
+  "marketing": {
+    "mensajePrincipal": "Los viernes saben mejor con Soltura.",
+    "publicoObjetivo": [
+      "Jóvenes",
+      "Amantes de la comida",
+      "Clientes de plataformas de delivery"
+    ],
+    "canales": [
+      "Facebook",
+      "Apps de delivery",
+      "Promociones nocturnas"
+    ]
+  },
+  "media": [
+    {
+      "tipo": "imagen",
+      "url": "https://soltura.com/media/wing-night.jpg",
+      "descripcion": "Imagen de promoción de Wing Night Deal"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "681a6e8ac799f147e13a276a"
+  },
+  "nombrePaquete": "Chill & Grill",
+  "descripcion": "Comé con más gusto y mejores beneficios, ya sea en el restaurante o desde casa.",
+  "precioMensual": 199,
+  "beneficios": [
+    "Postre gratis los fines de semana",
+    "Descuento en pedidos para llevar"
+  ],
+  "categoria": "Restaurantes",
+  "marketing": {
+    "mensajePrincipal": "Sabor premium con beneficios cada semana.",
+    "publicoObjetivo": [
+      "Parejas",
+      "Foodies",
+      "Amantes del buen comer"
+    ],
+    "canales": [
+      "Instagram",
+      "Restaurantes afiliados",
+      "Promociones digitales"
+    ]
+  },
+  "media": [
+    {
+      "tipo": "imagen",
+      "url": "https://soltura.com/media/chill-grill.jpg",
+      "descripcion": "Banner promocional de Chill & Grill"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "681a6e8ac799f147e13a276b"
+  },
+  "nombrePaquete": "EasyPark Pass",
+  "descripcion": "Estacionate sin estrés: más horas gratis, tarifas reducidas y acceso preferencial.",
+  "precioMensual": 149,
+  "beneficios": [
+    "Horas de parqueo gratis por semana",
+    "Descuento en parqueos nocturnos",
+    "Tarifa especial de fin de semana (compras mayores a ₡2.000)"
+  ],
+  "categoria": "Transporte Urbano",
+  "marketing": {
+    "mensajePrincipal": "Parqueá fácil, viví mejor.",
+    "publicoObjetivo": [
+      "Conductores urbanos",
+      "Oficinistas",
+      "Visitantes de zonas céntricas"
+    ],
+    "canales": [
+      "Apps de parqueo",
+      "Anuncios en vía pública",
+      "Facebook"
+    ]
+  },
+  "media": [
+    {
+      "tipo": "imagen",
+      "url": "https://soltura.com/media/easypark.jpg",
+      "descripcion": "Imagen promocional de EasyPark Pass"
+    }
+  ]
+}]

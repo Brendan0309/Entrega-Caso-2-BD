@@ -1,0 +1,24 @@
+[{
+  "_id": {
+    "$oid": "681a6fa9c799f147e13a2790"
+  },
+  "clienteId": "67890XYZ",
+  "nombre": "Manolo Aguilar",
+  "fechaRecepcion": {
+    "$date": "2025-05-04T12:20:00.000Z"
+  },
+  "detalle": "El masaje mensual no fue aceptado por el spa asociado.",
+  "canalRecepcion": "Correo electrónico",
+  "infoRecepcion": "67890XYZ@gmail.com",
+  "estado": "Resuelta",
+  "accionesTomadas": [
+    "Se verificó la afiliación del spa.",
+    "Se emitió crédito adicional al cliente.",
+    "Se actualizó la lista de socios en la plataforma."
+  ],
+  "fechaResolucion": {
+    "$date": "2025-05-05T10:15:00.000Z"
+  },
+  "agenteResponsable": "Daniela P.",
+  "satisfaccionCliente": "Alta"
+}]

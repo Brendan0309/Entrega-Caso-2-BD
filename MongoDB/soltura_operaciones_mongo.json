@@ -1,0 +1,16 @@
+[{
+  "_id": {
+    "$oid": "681a6f84c799f147e13a2782"
+  },
+  "clienteId": "12345ABC",
+  "nombre": "María Fernández",
+  "canalContacto": "WhatsApp",
+  "infoContacto": "1234-5678",
+  "fechaContacto": {
+    "$date": "2025-05-05T14:30:00.000Z"
+  },
+  "motivoContacto": "Consulta sobre beneficios del plan",
+  "agenteAsignado": "Lucía R.",
+  "estado": "Atendido",
+  "notas": "Cliente quería confirmar si su plan incluye café gratis los viernes."
+}]

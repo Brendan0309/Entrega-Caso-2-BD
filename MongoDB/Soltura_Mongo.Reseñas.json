@@ -1,0 +1,23 @@
+[{
+  "_id": {
+    "$oid": "681a6fbdc799f147e13a2796"
+  },
+  "clienteId": "11223LMN",
+  "nombre": "Javier Mora",
+  "paquete": "DriveSaver Plan",
+  "calificacion": 4.5,
+  "comentario": "Muy buen servicio, el acceso prioritario en estaciones fue muy útil. Solo me gustaría que se incluyera un lavado mensual.",
+  "fecha": {
+    "$date": "2025-05-05T16:40:00.000Z"
+  },
+  "resaltado": true,
+  "respuestas": [
+    {
+      "nombre": "Daniela Porras",
+      "fecha": {
+        "$date": "2025-05-05T17:00:00.000Z"
+      },
+      "comentario": "¡Gracias por tu comentario, Javier! Tomamos en cuenta tu sugerencia del lavado mensual para seguir mejorando tu experiencia."
+    }
+  ]
+}]
