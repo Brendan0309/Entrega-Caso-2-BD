@@ -114,7 +114,7 @@ Script para las consultas:
 
 <hr>
 #Seguridad de la base
-Pequeña documentación: [Seguridad Bases.pdf](./SeguridadBases.pdf)<br>
+Pequeña documentación: [SeguridadBases.pdf](./SeguridadBases.pdf)<br>
 
 
 
