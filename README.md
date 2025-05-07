@@ -6,7 +6,7 @@ Nombre de los integrantes
 
 <hr>
 
-Diseño Actualizado de la base de datos: https://github.com/Brendan0309/Entrega-Caso-2-BD/blob/636e92a70e03544272df568c48060cc58f833bd3/DIagramadelabasefinal.pdf
+Diseño Actualizado de la base de datos: DIagramadelabasefinal.pdf
 
 Script de Creación de la base de datos:
 -Archivo .SQL:
