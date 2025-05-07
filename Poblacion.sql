@@ -1,6 +1,6 @@
 ﻿use caipiDB;
 
-
+/*
 insert into caipi_Currencies(name, acronym, symbol)
 values ('Colón Costarricense', 'CRC', '₡'),
 ('Dólar Estadounidense', 'USD', '$');
@@ -264,7 +264,737 @@ from (
 
 select * from caipi_mediosDisponibles;
 
+-- Insertar datos de prueba en planprices
 
+INSERT INTO [dbo].[caipi_planPrices] (
+    amount, postTime, endDate, recurrencyType, [current], planId
+)
+VALUES
+    -- Plan 1: Dos precios históricos y uno actual
+    (39000, DATEADD(MONTH, -4, GETDATE()), DATEADD(MONTH, -2, GETDATE()), 3, 0, 1),  -- Trimestral, precio antiguo
+    (35000, DATEADD(MONTH, -2, GETDATE()), DATEADD(MONTH, -1, GETDATE()), 3, 0, 1),  -- Precio intermedio
+    (29000, DATEADD(MONTH, -1, GETDATE()), NULL, 3, 1, 1),  -- Precio actual
+    
+    -- Plan 2: Dos precios históricos y uno actual
+    (19000, DATEADD(MONTH, -4, GETDATE()), DATEADD(MONTH, -2, GETDATE()), 3, 0, 2),  -- Trimestral, precio antiguo
+    (15000, DATEADD(MONTH, -2, GETDATE()), DATEADD(MONTH, -1, GETDATE()), 3, 0, 2),  -- Precio intermedio
+    (9000, DATEADD(MONTH, -1, GETDATE()), NULL, 3, 1, 2),  -- Precio actual
+
+    -- Plan 3: Dos precios históricos y uno actual
+    (29000, DATEADD(MONTH, -4, GETDATE()), DATEADD(MONTH, -2, GETDATE()), 3, 0, 3),  -- Trimestral, precio antiguo
+    (25000, DATEADD(MONTH, -2, GETDATE()), DATEADD(MONTH, -1, GETDATE()), 3, 0, 3),  -- Precio intermedio
+    (19000, DATEADD(MONTH, -1, GETDATE()), NULL, 3, 1, 3),  -- Precio actual
+
+    -- Plan 4: Dos precios históricos y uno actual
+    (59000, DATEADD(MONTH, -4, GETDATE()), DATEADD(MONTH, -2, GETDATE()), 3, 0, 4),  -- Trimestral, precio antiguo
+    (55000, DATEADD(MONTH, -2, GETDATE()), DATEADD(MONTH, -1, GETDATE()), 3, 0, 4),  -- Precio intermedio
+    (49000, DATEADD(MONTH, -1, GETDATE()), NULL, 3, 1, 4); -- Precio actual
+    
+-- Insertar datos de prueba en Metodos de pago
+INSERT INTO [dbo].[caipi_MetodosDePago] 
+    ([name], [apiURL], [secretKey], [llave], [logoIconURL], [enabled], [templateJSON])
+VALUES
+    ('Stripe', 'https://api.stripe.com/v1/charges/', 
+     0x6034F5E0BB55334A94BAC4BE87CFDE90, 
+     0x89E506C60F502045B576DE849B754429, 
+     NULL, 1, NULL),
+    
+    ('Authorize.net', 'https://www.sandbox.paypal.com', 
+     0x859A7A32CF852E45A71A8A30F47AA44A, 
+     0x693019A482F5164DB6412FFF2AE4696F, 
+     NULL, 1, NULL),
+    
+    ('PayPal', 'https://api-m.sandbox.paypal.com', 
+     0x77E5C9D504656A46B6774630BD5BD0B6, 
+     0x2730D1CA704242448432AA40856276A1, 
+     NULL, 1, NULL),
+    
+    ('Adyen', 'https://checkout-test.adyen.com/', 
+     0xD6BC40705000434EBD11C4F463C72F1E, 
+     0xC04C802C63841F4CA4A96E75E3DFFE2D, 
+     NULL, 1, NULL),
+    
+    ('Braintree', 'https://payments.braintree-api.com', 
+     0x1B2C6C42244A2B439FDDE5F9C2BC2DCD, 
+     0x9751E6F33926204794BC7B15ECBF98D1, 
+     NULL, 1, NULL),
+    
+    ('Stripe', 'https://api.stripe.com/v1/charges/', 
+     0xF8427E9F53D92040B6DE2F67F41B0DB0, 
+     0x40463D70B7F9A244950A4B75E535A1A0, 
+     NULL, 1, NULL),
+    
+    ('Authorize.net', 'https://www.sandbox.paypal.com', 
+     0x6AA30D29D9415F4E927509B7BC2CEEF4, 
+     0xFC3E21E77C0A6343ACFC24D199951563, 
+     NULL, 1, NULL),
+    
+    ('PayPal', 'https://api-m.sandbox.paypal.com', 
+     0x8D96721022FCE445ABDD998968202B39, 
+     0x26BC0C6548D0CF48A48C7D1451AF04B1, 
+     NULL, 1, NULL),
+    
+    ('Adyen', 'https://checkout-test.adyen.com/', 
+     0xB4093BCF262739469F71B6149F75E8E2, 
+     0xAA985CBF80A89041B2F4AF6A7A195A62, 
+     NULL, 1, NULL),
+    
+    ('Braintree', 'https://payments.braintree-api.com', 
+     0x3BA84A9DAB782846810059FBD23F5FC0, 
+     0x4C0AD89498862D468A9B0EB655465AEB, 
+     NULL, 1, NULL)
+
+-- Insertar datos de prueba en MediosDisponibles
+
+INSERT INTO [dbo].[caipi_MediosDisponibles] (
+    [name],
+    [token],
+    [expTokenDate],
+    [maskAccount],
+    [callbackURLget],
+    [callBackPost],
+    [callBackRedirect],
+    [userId],
+    [metodoPagoId],
+    [configurationJSON]
+)
+VALUES
+(
+    'Cuenta PayPal Personal',
+    0x50617950616C2E4163636F756E742331,
+    DATEADD(YEAR, 2, GETDATE()),
+    'usuario1@dominio.com',
+    'https://api.paypal.com/callback/get/111',
+    'https://api.paypal.com/callback/post/111',
+    'https://cliente.paypal.com/redirect/111',
+    1,
+    3,
+    '{"email":"usuario1@dominio.com","verified":true,"accountType":"personal"}'
+),
+(
+    'Cuenta PayPal Negocios',
+    0x50617950616C2E4163636F756E742332,
+    DATEADD(YEAR, 1, GETDATE()),
+    'negocio@empresa.com',
+    'https://api.paypal.com/callback/get/222',
+    'https://api.paypal.com/callback/post/222',
+    'https://cliente.paypal.com/redirect/222',
+    2,
+    3,
+    '{"email":"negocio@empresa.com","verified":true,"accountType":"business","businessName":"Mi Empresa SL"}'
+),
+(
+    'PayPal Premier',
+    0x50617950616C2E4163636F756E742333,
+    DATEADD(YEAR, 3, GETDATE()),
+    'premier@cliente.com',
+    'https://api.paypal.com/callback/get/333',
+    'https://api.paypal.com/callback/post/333',
+    'https://cliente.paypal.com/redirect/333',
+    3, 
+    3, 
+    '{"email":"premier@cliente.com","verified":true,"accountType":"premier","creditCardLinked":true}'
+),
+(
+    'PayPal Familiar',
+    0x50617950616C2E4163636F756E742334,
+    DATEADD(MONTH, 18, GETDATE()),
+    'familia@hogar.com',
+    'https://api.paypal.com/callback/get/444',
+    'https://api.paypal.com/callback/post/444',
+    'https://cliente.paypal.com/redirect/444',
+    4,
+    3,
+    '{"email":"familia@hogar.com","verified":true,"accountType":"family","members":4}'
+),
+(
+    'PayPal Ahorros',
+    0x50617950616C2E4163636F756E742335,
+    DATEADD(YEAR, 2, GETDATE()),
+    'ahorros@finanzas.com',
+    'https://api.paypal.com/callback/get/555',
+    'https://api.paypal.com/callback/post/555',
+    'https://cliente.paypal.com/redirect/555',
+    5, 
+    3, 
+    '{"email":"ahorros@finanzas.com","verified":true,"accountType":"savings","balance":1500.00}'
+)
+
+
+-- Insertar datos de prueba en Languages
+
+INSERT INTO [dbo].[caipi_Languages] (
+    [languageId],
+    [name],
+    [culture],
+    [countryId]
+)
+VALUES
+-- Idioma 1: Español (España)
+(
+    1,
+    'Español',
+    'es-ES',
+    1  -- Asumiendo que countryId 1 es España
+)
+
+
+-- Insertar datos de prueba en Modules
+
+INSERT INTO [dbo].[caipi_Modules] (
+    [moduleId],
+    [name],
+    [languajeId]
+)
+VALUES
+-- Módulo 1: Suscripciones (asumiendo languageId 1 para español)
+(
+    1,
+    'Suscripciones',
+    1
+),
+-- Módulo 2: Tienda Online
+(
+    2,
+    'Tienda Online',
+    1
+),
+-- Módulo 3: Servicios
+(
+    3,
+    'Servicios',
+    1
+),
+-- Módulo 4: Donaciones
+(
+    4,
+    'Donaciones',
+    1
+),
+-- Módulo 5: Facturación
+(
+    5,
+    'Facturación',
+    1
+),
+-- Módulo 6: Reportes
+(
+    6,
+    'Reportes',
+    1
+),
+-- Módulo 7: Configuración
+(
+    7,
+    'Configuración',
+    1
+),
+-- Módulo 8: Administración
+(
+    8,
+    'Administración',
+    1
+),
+-- Módulo 9: Soporte
+(
+    9,
+    'Soporte',
+    1
+),
+-- Módulo 10: API
+(
+    10,
+    'API',
+    1
+)
+
+
+-- Insertar datos de prueba en Schedules
+
+SET IDENTITY_INSERT [dbo].[caipi_Schedules] ON
+
+INSERT INTO [dbo].[caipi_Schedules] (
+    [scheduleId],
+    [name],
+    [recurrencyType],
+    [repeat]
+)
+VALUES
+(
+    1,
+    'Mensual',
+    3,  -- Mensual
+    1
+)
+
+SET IDENTITY_INSERT [dbo].[caipi_Schedules] OFF
+
+
+-- Insertar datos de prueba en Pagos
+
+INSERT INTO [dbo].[caipi_Pagos] (
+    [pagoId],
+    [pagoMedioId],
+    [metodoPagoId],
+    [personId],
+    [monto],
+    [actualMonto],
+    [result],
+    [auth],
+    [chargeToken],
+    [error],
+    [fecha],
+    [checksum],
+    [exchangeRate],
+    [convertedAmount],
+    [moduleId],
+    [currencyId],
+    [scheduleId]
+)
+VALUES
+    -- Pago 1: Suscripción (éxito)
+    (
+        1, 
+        1, 
+        1, 
+        1, 
+        29000,  -- 29.99 convertido
+        29000,  -- 29.99 convertido
+        0x53756363657373, 
+        0x417574683132333435, 
+        0x546F6B656E313233,
+        NULL,
+        '2025-01-15 10:30:00',
+        0x436865636B73756D31,
+        1.0,
+        29000,  -- 29.99 convertido
+        1,
+        1,
+        1
+    ),
+    -- Pago 2: Compra en tienda (error)
+    (
+        2, 
+        2,
+        3,
+        2, 
+        59000,  -- 59.50 convertido
+        0, 
+        0x4572726F72,
+        0x417574683132333436, 
+        0x546F6B656E313234, 
+        'Fondos insuficientes',
+        '2025-01-16 14:45:00', 
+        0x436865636B73756D32, 
+        1.0, 
+        0, 
+        2,
+        1, 
+        1
+    ),
+    -- Pago 3: Pago recurrente (éxito)
+    (
+        3, 
+        3,
+        2,
+        3, 
+        120000,  -- 120.00 convertido
+        120000,  -- 120.00 convertido
+        0x53756363657373, 
+        0x417574683132333437, 
+        0x546F6B656E313235, 
+        NULL, 
+        '2025-01-17 09:15:00', 
+        0x436865636B73756D33, 
+        0.85,
+        102000,  -- 102.00 convertido
+        3,
+        2,
+        1
+    ),
+    -- Pago 4: Renovación anual (éxito)
+    (
+        4, 
+        1,
+        1,
+        4, 
+        299000,  -- 299.00 convertido
+        299000,  -- 299.00 convertido
+        0x53756363657373, 
+        0x417574683132333438, 
+        0x546F6B656E313236, 
+        NULL, 
+        '2025-01-18 16:20:00', 
+        0x436865636B73756D34, 
+        1.0,
+        299000,  -- 299.00 convertido
+        1,
+        1,
+        1
+    ),
+    -- Pago 5: Donación (éxito)
+    (
+        5, 
+        2,
+        3,
+        5, 
+        50000,  -- 50.00 convertido
+        50000,  -- 50.00 convertido
+        0x53756363657373, 
+        0x417574683132333439, 
+        0x546F6B656E313237, 
+        NULL, 
+        '2025-01-19 11:10:00', 
+        0x436865636B73756D35, 
+        1.0,
+        50000,  -- 50.00 convertido
+        4,
+        1,
+        1
+    ),
+    -- Pago 6: Ejemplo adicional
+    (
+        6,
+        1,
+        1,
+        1, 
+        100000,  -- 100.00 convertido
+        100000,  -- 100.00 convertido
+        0x4578616D706C65526573756C7431,
+        0x4578616D706C654175746831,
+        0x4578616D706C65546F6B656E31,
+        NULL,
+        '2025-04-29 08:32:07.860',
+        0x4578616D706C65436865636B73756D31,
+        1,
+        100000,  -- 100.00 convertido
+        1,
+        1,
+        NULL
+    ),
+    -- Pago 7: Ejemplo adicional
+    (
+        7,
+        3,
+        3,
+        2, 
+        75000,  -- 75.50 convertido
+        75000,  -- 75.50 convertido
+        0x4578616D706C65526573756C7432,
+        0x4578616D706C654175746832,
+        0x4578616D706C65546F6B656E32,
+        NULL,
+        '2025-04-24 08:32:07.860',
+        0x4578616D706C65436865636B73756D32,
+        1,
+        75000,  -- 75.50 convertido
+        2,
+        1,
+        NULL
+    ),
+    -- Pago 8: Ejemplo adicional (error)
+    (
+        8,
+        2,
+        2,
+        3, 
+        200000,  -- 200.00 convertido
+        0, 
+        0x4578616D706C65526573756C7433,
+        0x4578616D706C654175746833,
+        0x4578616D706C65546F6B656E33,
+        'Tarjeta declinada',
+        '2025-04-19 08:32:07.860',
+        0x4578616D706C65436865636B73756D33,
+        1,
+        0,
+        3,
+        1,
+        NULL
+    ),
+    -- Pago 9: Ejemplo adicional
+    (
+        9,
+        5,
+        5,
+        4, 
+        150000,  -- 150.75 convertido (truncado a 150)
+        150000,  -- 150.75 convertido (truncado a 150)
+        0x4578616D706C65526573756C7434,
+        0x4578616D706C654175746834,
+        0x4578616D706C65546F6B656E34,
+        NULL,
+        '2025-04-14 08:32:07.860',
+        0x4578616D706C65436865636B73756D34,
+        1,
+        150000,  -- 150.75 convertido (truncado a 150)
+        4,
+        1,
+        NULL
+    ),
+    -- Pago 10: Ejemplo adicional
+    (
+        10,
+        4,
+        4,
+        5, 
+        89000,  -- 89.99 convertido
+        89000,  -- 89.99 convertido
+        0x4578616D706C65526573756C7435,
+        0x4578616D706C654175746835,
+        0x4578616D706C65546F6B656E35,
+        NULL,
+        '2025-04-09 08:32:07.860',
+        0x4578616D706C65436865636B73756D35,
+        1,
+        89000,  -- 89.99 convertido
+        5,
+        1,
+        NULL
+    );
+
+
+-- Insertar datos de prueba en SubTypes
+
+INSERT INTO [dbo].[caipi_subTypes] (
+    [subTypeId],
+    [porcentaje],
+    [detalle]
+)
+VALUES
+-- Subtipo 1: Comisión estándar
+(
+    1,
+    0.10, -- 10%
+    'Comisión estándar por servicio'
+)
+
+-- Insertar datos de prueba en DealBenefitTypes
+
+INSERT INTO [dbo].[caipi_DealBenefitTypes] 
+    ([dealBenefitTypesId], [name], [description], [isActive])
+VALUES
+    (1, 'Descuento porcentual', 'Descuento aplicado como porcentaje sobre el precio original', 1),
+    (2, 'Descuento fijo', 'Cantidad fija de descuento aplicada al precio', 1),
+    (3, 'Envío gratuito', 'Beneficio de envío sin costo para el cliente', 1),
+    (4, 'Producto gratis', 'Obsequio de un producto adicional con la compra', 1)
+
+
+-- Insertar datos de prueba en partnerDealBenefits
+INSERT INTO [dbo].[caipi_partnerDealBenefits] 
+    ([partnerDealBenefitsId], [partnerDealId], [dealBenefitTypesid], 
+     [starDate], [endDate], [planId], [limit], [userId])
+VALUES
+    (1, 1, 1, '2025-01-01', '2025-12-31', 1, 100, 1),
+    (2, 1, 3, '2025-01-01', NULL, 1, 50, 1),
+    (3, 2, 1, '2025-03-15', '2025-06-15', 2, 200, 2),
+    (4, 3, 4, '2025-02-01', '2025-05-01', 3, 30, 3),
+    (5, 4, 3, '2025-01-01', '2025-12-31', 4, 1000, 4),
+    (6, 5, 2, '2025-04-01', NULL, 5, 75, 5)
+
+
+
+
+-- Datos de prueba en pagos de los ultimos 30 dias
+DECLARE @UltimoId INT;
+SELECT @UltimoId = ISNULL(MAX(pagoId), 0) + 1 FROM dbo.caipi_Pagos;
+
+INSERT INTO [dbo].[caipi_Pagos] (
+    [pagoId],
+    [pagoMedioId],
+    [metodoPagoId],
+    [personId],
+    [monto],
+    [actualMonto],
+    [result],
+    [auth],
+    [chargeToken],
+    [error],
+    [fecha],
+    [checksum],
+    [exchangeRate],
+    [convertedAmount],
+    [moduleId],
+    [currencyId],
+    [scheduleId]
+)
+VALUES
+    -- Pago 1: Pago exitoso con Stripe (hace 5 días)
+    (@UltimoId, 1, 1, 1, 100.00, 100.00, 
+     0x4578616D706C65526573756C7431, 0x4578616D706C654175746831, 
+     0x4578616D706C65546F6B656E31, NULL, 
+     DATEADD(day, -5, GETDATE()), 
+     0x4578616D706C65436865636B73756D31, 1.0, 100.00, 1, 1, NULL),
+    
+    -- Pago 2: Pago exitoso con PayPal (hace 10 días)
+    (@UltimoId + 1, 3, 3, 2, 75.50, 75.50, 
+     0x4578616D706C65526573756C7432, 0x4578616D706C654175746832, 
+     0x4578616D706C65546F6B656E32, NULL, 
+     DATEADD(day, -10, GETDATE()), 
+     0x4578616D706C65436865636B73756D32, 1.0, 75.50, 2, 1, NULL),
+    
+    -- Pago 3: Pago fallido con Authorize.net (hace 15 días)
+    (@UltimoId + 2, 2, 2, 3, 200.00, 0.00, 
+     0x4578616D706C65526573756C7433, 0x4578616D706C654175746833, 
+     0x4578616D706C65546F6B656E33, 'Tarjeta declinada', 
+     DATEADD(day, -15, GETDATE()), 
+     0x4578616D706C65436865636B73756D33, 1.0, 0.00, 3, 1, NULL),
+    
+    -- Pago 4: Pago exitoso con Braintree (hace 20 días)
+    (@UltimoId + 3, 5, 5, 4, 150.75, 150.75, 
+     0x4578616D706C65526573756C7434, 0x4578616D706C654175746834, 
+     0x4578616D706C65546F6B656E34, NULL, 
+     DATEADD(day, -20, GETDATE()), 
+     0x4578616D706C65436865636B73756D34, 1.0, 150.75, 4, 1, NULL),
+    
+    -- Pago 5: Pago exitoso con Adyen (hace 25 días)
+    (@UltimoId + 4, 4, 4, 5, 89.99, 89.99, 
+     0x4578616D706C65526573756C7435, 0x4578616D706C654175746835, 
+     0x4578616D706C65546F6B656E35, NULL, 
+     DATEADD(day, -25, GETDATE()), 
+     0x4578616D706C65436865636B73756D35, 1.0, 89.99, 5, 1, NULL)
+
+
+
+
+
+-- Datos de prueba en el PPU
+
+insert into caipi_planPerUser(adquisitionDate, expirationDate, enabled, planId, userId)
+select 
+    CAST(GETDATE() AS DATE) as adquisitionDate,
+    CAST(DATEADD(MONTH, 1, GETDATE()) AS DATE) as expirationDate,
+	1 as enabled,
+	((p.userId - 1) % 7) + 1 as planId,
+    p.userId as userId
+from (
+    select top 25 userId
+    from caipi_Users
+    order by userId asc
+) as p;
+
+
+-- Datos de prueba para los 3 SP
+-- Insertar monedas
+INSERT INTO [dbo].[caipi_Currencies] ([name], [acronym], [symbol])
+VALUES 
+    ('Dólar Estadounidense', 'USD', '$'),
+    ('Euro', 'EUR', '€'),
+    ('Peso Mexicano', 'MXN', '$');
+
+-- Insertar países
+INSERT INTO [dbo].[caipi_Countries] ([name], [currencyId])
+VALUES 
+    ('Estados Unidos', 1),
+    ('México', 3),
+    ('España', 2);
+
+-- Insertar estados
+INSERT INTO [dbo].[caipi_States] ([name], [countryId])
+VALUES 
+    ('California', 1),
+    ('Texas', 1),
+    ('Ciudad de México', 2),
+    ('Barcelona', 3);
+
+-- Insertar ciudades
+INSERT INTO [dbo].[caipi_Cities] ([name], [stateId])
+VALUES 
+    ('Los Ángeles', 1),
+    ('Austin', 2),
+    ('CDMX', 3),
+    ('Barcelona', 4);
+
+-- Insertar direcciones
+INSERT INTO [dbo].[caipi_adresses] ([line1], [line2], [zipcode], [geoposition], [cityId])
+VALUES 
+    ('123 Main St', 'Apt 4B', '90001', geography::Point(34.0522, -118.2437, 4326), 1),
+    ('456 Oak Ave', NULL, '78701', geography::Point(30.2672, -97.7431, 4326), 2);
+
+-- Insertar personas
+INSERT INTO [dbo].[caipi_Personas] ([firstName], [lastname], [birthdate])
+VALUES 
+    ('Juan', 'Pérez', '1985-05-15'),
+    ('María', 'Gómez', '1990-08-22');
+
+-- Insertar usuarios
+INSERT INTO [dbo].[caipi_Users] ([password], [enabled], [userCompanyId], [personId])
+VALUES 
+    (0x8F3A7D20C45F6E, 1, NULL, 1), -- Contraseña hasheada
+    (0xA5B4C3D2E1F0, 1, NULL, 2);
+
+-- Insertar tipos de features
+INSERT INTO [dbo].[caipi_FeaturesType] ([name], [enabled])
+VALUES 
+    ('Tipo Feature 1', 1),
+    ('Tipo Feature 2', 1);
+
+-- Insertar nombres de features
+INSERT INTO [dbo].[caipi_featureName] ([name])
+VALUES 
+    ('Feature Básica'),
+    ('Feature Premium');
+
+-- Insertar features
+INSERT INTO [dbo].[caipi_Features] ([featureNameId], [value], [enabled], [featureTypeId], [institucionesid], [featurePriceId])
+VALUES 
+    (1, 'Valor Feature 1', 1, 1, 1, 1),
+    (2, 'Valor Feature 2', 1, 2, 1, 2);
+
+-- Insertar tipos de precios de features
+INSERT INTO [dbo].[caipi_featurePriceTypes] ([name])
+VALUES 
+    ('Tipo Precio 1'),
+    ('Tipo Precio 2');
+
+-- Insertar precios de features
+INSERT INTO [dbo].[caipi_featurePrice] ([featurePriceTypeId], [originalPrice], [discountValue], [solturaPercent], [userPrice], [userPriceivi], [partnerDealId])
+VALUES 
+    (1, 100, 10, 0.05, 90, 95, 1),
+    (2, 200, 20, 0.10, 180, 190, 1);
+
+-- Insertar instituciones
+INSERT INTO [dbo].[caipi_Instituciones] ([nombre], [creationDate], [enabled], [adressId])
+VALUES 
+    ('Institución Ejemplo', GETDATE(), 1, 1);
+
+-- Insertar acuerdos con socios
+INSERT INTO [dbo].[caipi_PartnerDeals] ([institucioneId], [sealDate], [isActive], [dealDescription])
+VALUES 
+    (1, GETDATE(), 1, 'Acuerdo de prueba');
+
+-- Insertar planes
+INSERT INTO [dbo].[caipi_plans] ([name], [description], [periodStart], [periodEnd], [enabled], [imgURL])
+VALUES 
+    ('Plan Básico', 'Plan inicial para pruebas', '2023-01-01', '2023-12-31', 1, NULL),
+    ('Plan Intermedio', 'Plan de nivel medio', '2023-01-01', '2023-12-31', 1, NULL);
+
+-- Insertar precios de planes
+INSERT INTO [dbo].[caipi_planPrices] ([amount], [postTime], [endDate], [recurrencyType], [current], [planId])
+VALUES 
+    (50.00, GETDATE(), NULL, 1, 1, 1),
+    (75.00, GETDATE(), NULL, 1, 1, 2);
+
+-- Insertar planes por usuario
+INSERT INTO [dbo].[caipi_planPerUser] ([adquisitionDate], [expirationDate], [enabled], [planId], [userId])
+VALUES 
+    ('2023-01-01', '2023-12-31', 1, 1, 1),
+    ('2023-01-01', '2023-12-31', 1, 2, 2);
+
+-- Insertar límites de planes
+INSERT INTO [dbo].[caipi_PlanLimits] ([planLimitId], [limit_people], [limit], [featureId], [planPerUserId], [description])
+VALUES 
+    (1, 3, 500, 1, 1, 'Límite plan básico'),
+    (2, 5, 1000, 2, 2, 'Límite plan intermedio');
+
+-- Insertar features por plan
+INSERT INTO [dbo].[caipi_featuresPerPlan] ([enabled], [featureId], [planId])
+VALUES 
+    (1, 1, 1),
+    (1, 2, 2);
+
+
+/*
 select * into caipi_Temp from caipi_featurePrice;
 delete from caipi_featurePrice;
 DBCC CHECKIDENT ('caipi_mediosDisponibles', reseed, 0);
@@ -276,3 +1006,4 @@ update caipi_featureName
 set name = 'Amount weekend rate (Purchase value greater than 2,000 CRC)'
 where featureNameId = 18;
 select * from caipi_featureName;
+*/
