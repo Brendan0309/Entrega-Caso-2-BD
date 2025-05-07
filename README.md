@@ -6,7 +6,7 @@ Nombre de los integrantes
 
 <hr>
 
-Diseño Actualizado de la base de datos: DIagramadelabasefinal.pdf
+Diseño Actualizado de la base de datos: 
 
 Script de Creación de la base de datos:
 -Archivo .SQL:
