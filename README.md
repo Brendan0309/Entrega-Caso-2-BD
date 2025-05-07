@@ -1,4 +1,4 @@
-[docker run -d -p 33063306 --name db.txt](https://github.com/user-attachments/files/20075243/docker.run.-d.-p.33063306.--name.db.txt)# Entrega-Caso-2-BD
+# Entrega-Caso-2-BD
 
 Nombre de los integrantes
 
