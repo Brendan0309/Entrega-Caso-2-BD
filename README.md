@@ -10,7 +10,7 @@ Diseño Actualizado de la base de datos: [DIagramadelabasefinal.pdf](./DIagramad
 
 
 Script de Creación de la base de datos:
--Archivo .SQL:[ScriptCreación.sql](./ScriptCreación.sql)<br>
+-Archivo .SQL:[ScriptCreación.sql](./ScriptCreacion.sql)<br>
 
 
 Script para llenar la base de datos:
