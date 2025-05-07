@@ -2,7 +2,7 @@
 
 Integrantes:
 - Brendan Ramírez Campos
-- Victor Andres Fung Chiong
+- Victor Andrés Fung Chiong
 - Giovanni Esquivel Cortés
 - Andrés Baldi Mora
 
@@ -52,8 +52,8 @@ Migracion SSIS (para la creacion de tablas nuevas, para migrar en tablas ya hech
 - Ciudades  
 - Tipo de usuario de la conexión (usuario, compañía)  
 - Módulos  
-	- nombre  
-	- lenguaje  
+	- Nombre  
+	- Lenguaje  
 - Suscripciones  
 	- Precio
   - Planes 
