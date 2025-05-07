@@ -4,6 +4,7 @@ Nombre de los integrantes
 
 - Brendan Ramírez Campos
 - Victor Andres Fung Chiong
+- Giovanni Esquivel Cortés
 
 <hr>
 
