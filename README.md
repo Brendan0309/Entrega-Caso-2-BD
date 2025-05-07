@@ -19,6 +19,12 @@ Script para llenar la base de datos:
 Script para las consultas:
 -Arhivo .SQL:
 
+-Seguridad de la base
+Pequeña documentación: [SeguridadBases.pdf](./SeguridadBases.pdf)<br>
+
+-Migracion SSIS (para la creacion de tablas nuevas, para migrar en tablas ya hechas se uso pandas)
+Pequeña documentación: [MigracionTablasNuevas.pdf](./MigracionTablasNuevas.pdf)<br>
+
 <hr>
 
 # Consultas solicitadas
@@ -112,15 +118,8 @@ Script para las consultas:
  - Direccion
  - Obligaciones
 
-<hr>
-#Seguridad de la base
-Pequeña documentación: [SeguridadBases.pdf](./SeguridadBases.pdf)<br>
 
 
-
-<hr>
-#Migracion SSIS (para la creacion de tablas nuevas, para migrar en tablas ya hechas se uso pandas)
-Pequeña documentación: 
 
 
 
