@@ -10,11 +10,11 @@ Diseño Actualizado de la base de datos: [DIagramadelabasefinal.pdf](./DIagramad
 
 
 Script de Creación de la base de datos:
--Archivo .SQL:
+-Archivo .SQL:[ScriptCreación.sql](./ScriptCreación.sql)<br>
 
 
 Script para llenar la base de datos:
--Archivo .SQL: 	
+-Archivo .SQL: 	[Poblacion.sql](./Poblacion.sql)<br>
 
 Script para las consultas:
 -Arhivo .SQL:
@@ -114,7 +114,7 @@ Script para las consultas:
 
 <hr>
 #Seguridad de la base
-Pequeña documentación: 
+Pequeña documentación: [Seguridad Bases.pdf](./SeguridadBases.pdf)<br>
 
 
 
