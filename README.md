@@ -1,38 +1,33 @@
 # Entrega-Caso-2-BD
 
-Nombre de los integrantes
-
+Integrantes:
 - Brendan Ramírez Campos
 - Victor Andres Fung Chiong
 - Giovanni Esquivel Cortés
+- Andrés Baldi Mora
 
-<hr>
+## Archivos
 
 Diseño Actualizado de la base de datos: [DIagramadelabasefinal.pdf](./DIagramadelabasefinal.pdf)<br>
 
+Script de Creación de la BD:
+-Archivo .SQL: [ScriptCreación.sql](./ScriptCreacion.sql)<br>
 
-Script de Creación de la base de datos:
--Archivo .SQL:[ScriptCreación.sql](./ScriptCreacion.sql)<br>
+Script de Llenado de la BD:
+-Archivo .SQL: [Poblacion.sql](./Poblacion.sql)<br>
 
+Consultas T-SQL y Misceláneas:
+-Archivo .SQL:
 
-Script para llenar la base de datos:
--Archivo .SQL: 	[Poblacion.sql](./Poblacion.sql)<br>
-
-Script para las consultas:
--Arhivo .SQL:
-
--Seguridad de la base
+Factores de Seguridad:
 Pequeña documentación: [SeguridadBases.pdf](./SeguridadBases.pdf)<br>
 
--Migracion SSIS (para la creacion de tablas nuevas, para migrar en tablas ya hechas se uso pandas)
-Pequeña documentación: [MigracionTablasNuevas.pdf](./Migraciontablasnuevas.pdf)<br>
+Migracion SSIS (para la creacion de tablas nuevas, para migrar en tablas ya hechas se uso pandas)
+- Pequeña documentación: [MigracionTablasNuevas.pdf](./Migraciontablasnuevas.pdf)<br>
 
-<hr>
 
 ## Consultas solicitadas
 
-
-<hr>
 
 <details>
 
