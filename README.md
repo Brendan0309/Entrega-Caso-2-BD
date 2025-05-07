@@ -128,6 +128,101 @@ Pequeña documentación: [MigracionTablasNuevas.pdf](./Migraciontablasnuevas.pdf
 
 </details>
 
+<details>
+	<summary>
+		Lista de entidades mongodb
+	</summary>
+
+<br>
+
+- _id
+
+- clienteId
+
+- nombre
+
+- descripcion
+
+- precioMensual
+
+- beneficios (array of strings)
+
+- categoria
+
+- marketing (object)
+
+	- mensajePrincipal
+
+	- publicoObjetivo (array of strings)
+
+	- canales (array of strings)
+
+- media (array of objects)
+
+	- tipo
+
+	- url
+
+	- descripcion
+
+- paquete (string, name of the package)
+
+- calificacion (number)
+
+- comentario
+
+- fecha
+
+- resaltado (boolean)
+
+- respuestas (array of objects)
+
+	- nombre
+
+	- fecha
+
+	- comentario
+
+- canalContacto
+
+- infoContacto
+
+- fechaContacto
+
+- motivoContacto
+
+- agenteAsignado
+
+- estado
+
+- notas
+
+- fechaRecepcion
+
+- detalle
+
+- canalRecepcion
+
+- infoRecepcion
+
+- accionesTomadas (array of strings)
+
+- fechaResolucion
+
+- agenteResponsable
+
+- satisfaccionCliente
+
+- fechaCreacion
+
+- historial (array of objects)
+
+	- fecha
+
+	- accion
+
+</details>
+
 
 
 
