@@ -113,7 +113,7 @@ Script para las consultas:
 
 <hr>
 #Seguridad de la base
-Pequeña documentación: [Seguridad Bases.pdf](https://github.com/user-attachments/files/20075404/Seguridad.Bases.pdf)
+Pequeña documentación: 
 
 
 
