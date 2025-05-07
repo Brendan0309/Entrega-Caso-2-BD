@@ -23,7 +23,7 @@ Script para las consultas:
 Pequeña documentación: [SeguridadBases.pdf](./SeguridadBases.pdf)<br>
 
 -Migracion SSIS (para la creacion de tablas nuevas, para migrar en tablas ya hechas se uso pandas)
-Pequeña documentación: [MigracionTablasNuevas.pdf](./MigracionTablasNuevas.pdf)<br>
+Pequeña documentación: [MigracionTablasNuevas.pdf](./Migraciontablasnuevas.pdf)<br>
 
 <hr>
 
